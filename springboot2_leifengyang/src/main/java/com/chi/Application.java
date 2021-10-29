@@ -7,7 +7,22 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author chi
- * @Description: TODO
+ * @Description:
+ *
+ * @SpringBootApplication  等价于:
+ * @SpringBootConfiguration
+ * @EnableAutoConfiguration
+ * @ComponentScan
+ *
+ * @EnableAutoConfiguration   等价于:
+ * @AutoConfigurationPackage
+ * @Import(AutoConfigurationImportSelector.class)
+ *
+ *
+ * @AutoConfigurationPackage   等价于:
+ * @Import({Registrar.class})
+ *
+ *
  * @date 2021/10/29 10:20
  * @Version 1.0
  */

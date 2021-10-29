@@ -2,6 +2,7 @@ package com.chi.config;
 
 import com.chi.domain.Pet;
 import com.chi.domain.User;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Import;
 @Configuration
 public class AppConfiguration {
 
+    @ConditionalOnMissingBean(User.class)
     @Bean("myUser")
     public User getUser(){
         return new User("myTest01", 20);
