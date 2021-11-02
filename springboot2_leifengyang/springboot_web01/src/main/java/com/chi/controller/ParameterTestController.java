@@ -51,6 +51,30 @@ public class ParameterTestController {
     public Map postMethod(@RequestBody String content) {
         Map<String, Object> map = new HashMap<>();
         map.put("content", content);
+
+        return map;
+    }
+
+    /**
+     *
+     * @Description //矩阵变量
+     * 1.请求url示例
+     * /cars/sell;low=34;brand=byd,audi,yd
+     *
+     * 2.说明
+     * 但是springboot默认是禁用了矩阵变量,需要手动开启
+     * 原理: 对于路径的处理,UrlPathHelper会进行解析.WebMvcAutoConfiguration默认是true.
+     */
+    @GetMapping("/cars/{path}")
+    public Map carSell(@MatrixVariable("low") Integer low,
+                       @MatrixVariable("brand") List<String> brand,
+                       @PathVariable("path") String path) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("low", low);
+        map.put("brand", brand);
+        map.put("path", path);
+
         return map;
     }
 
