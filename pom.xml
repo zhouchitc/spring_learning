@@ -17,6 +17,7 @@
     <modules>
         <module>spring_jpa_learning</module>
         <module>springboot2_leifengyang</module>
+        <module>Springboot-mybatis-plus</module>
     </modules>
 
     <properties>

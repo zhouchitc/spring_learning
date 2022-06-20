@@ -2,6 +2,7 @@ package com.chi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * @author chi
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  */
 @SpringBootApplication
+@EnableAsync
 public class Web1Application {
     public static void main(String[] args) {
         SpringApplication.run(Web1Application.class);
