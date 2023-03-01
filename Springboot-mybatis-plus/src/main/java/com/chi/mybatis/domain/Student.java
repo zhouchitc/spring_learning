@@ -1,7 +1,9 @@
 package com.chi.mybatis.domain;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.gitee.sunchenbin.mybatis.actable.annotation.Column;
+import com.gitee.sunchenbin.mybatis.actable.annotation.IsKey;
 import com.gitee.sunchenbin.mybatis.actable.constants.MySqlTypeConstant;
 import lombok.Data;
 
@@ -16,7 +18,7 @@ import javax.persistence.Id;
 @Data
 @TableName("t_student")    // 需要使用mybatis-plus的注解,否则建表时无异常,但是搜索时会按照类名搜索
 public class Student extends BaseDomain {
-    @Id
+    @IsKey
     @Column(name = "`id`",
             type = MySqlTypeConstant.BIGINT,
             length = 64,
